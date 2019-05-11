@@ -1,0 +1,214 @@
+* {padding: 0; margin: 0; font-family: 'Heebo', sans-serif; font-family: 'Roboto', sans-serif; font-family: 'Fjalla One', sans-serif; font-family: 'Archivo Narrow', sans-serif;}
+
+*, *:before, *:after{box-sizing:border-box;}/* отключает схлопывание отступов */
+
+/* ##################################################################### */
+
+body{
+	background-color:#eaedf2;
+	padding:50px;
+}
+
+/* ##################################################################### */
+
+.top-header{
+	display: flex;
+}
+
+.top-header ul{
+	display: flex; /* Делаем элемент флекс контейнером*/
+	align-items: center; /* выравнивает вертикально и отображается по центру контейнера */
+	list-style: none; /*Отключаем маркеры у списка*/
+	margin-left: 40px; 
+}
+
+.top-header li+li { /*Для всех li после li*/
+	margin-left: 50px;
+}
+
+.top-header ul li a{
+	color:#666666;
+	font-size:17px;
+	text-decoration:none;
+}
+
+.top-header ul li a.active {/* активная ссылка меню */
+	color: #192229;
+	position:relative;
+}
+
+.top-header ul li a.active:before {/* подчеркивание активной ссылки меню */
+	content:"";
+	position:absolute;
+	color: #192229;
+	width:100%;
+	height:3px;
+	background:#605bdb;
+	border-radius:3px;
+	bottom:-15px;
+}
+
+.top-header li a:hover {
+	color: #192229;
+}
+
+/* ##################################################################### */
+
+.search{
+	display: flex; /* Делаем элемент флекс контейнером*/
+	justify-content:space-between; /* первый блок располагается в начале главной оси, последний блок – в конце, все остальные блоки равномерно распределены в оставшемся пространстве */
+	align-items: center; /* выравнивает вертикально и отображается по центру контейнера */
+	margin:40px;
+}
+
+.blokleft, .blokright{
+	width:680px;
+	height:70px;
+	background-color:#fff;
+	box-shadow: 0px 15px 27px -16px rgba(105,98,105,1);
+}
+
+.blokleft p, .blokright p{
+	color:#CCCCCC;
+	font-size:17px;
+	padding:20px;
+}
+
+.blokright{
+	display: flex; /* Делаем элемент флекс контейнером*/
+	justify-content:space-between; /* первый блок располагается в начале главной оси, последний блок – в конце, все остальные блоки равномерно распределены в оставшемся пространстве */
+	align-items: center; /* выравнивает вертикально и отображается по центру контейнера */
+}
+
+.blokright .bottom {
+	padding:10px;
+}
+
+.blokright a.bottom1{
+	padding:25px;
+	display: block;
+	width:150px;
+	height:30px;
+	background:#605bdb;
+	font-size:17px;
+	color:#FFF;
+	text-decoration:none;
+	text-align:center;
+	line-height:0px;
+}
+
+/* ##################################################################### */
+
+.obertka{
+	display:flex; /* Делаем элемент флекс контейнером */
+	justify-content:space-between; /* первый блок располагается в начале главной оси, последний блок – в конце, все остальные блоки равномерно распределены в оставшемся пространстве */
+	align-items: center; /* выравнивает вертикально и отображается по центру контейнера */
+	margin:40px;
+	width:1400px;
+	position:relative;
+}
+
+.aticl_left{/* ЛЕВАЯ КОЛОНКА */
+	width:300px;
+	padding:30px;
+	position:absolute;
+	top:90px;
+	left:-1035px;
+}
+
+.aticl_left span.art{
+	color:#666666;
+	font-size:18px;
+}
+
+/* ЧЕКБОКСЫ ЧЕКБОКСЫ  ЧЕКБОКСЫ  ЧЕКБОКСЫ  ЧЕКБОКСЫ */
+
+.box{
+	margin:20px auto;
+}
+
+.container {
+    display: block; /* блочный элемент */
+    user-select: none; /* запрещает пользователю выделять элемент */
+	color:#999999;
+	padding:5px;
+}
+
+/*.container input { Этот код прячет дефолтные браузерные стили для чекбокса. Мы делаем элемент полностью прозрачным за счет opacity, 
+width и height с нулевым значением и на их месте, задаем кастомные стили для чекбокса 
+    opacity: 0;
+    height: 0;
+    width: 0;
+}*/
+
+.checkmark {/* Создаем кастомные чекбоксы. Меняем размеры и цвет фона */
+    height: 23px;
+    width: 22px;
+}
+
+.container:hover input ~ .checkmark {/* При наведении курсора*/
+    color:#666666;
+}
+
+ .container input:checked ~ .checkmark {/* Для отмеченного чекбокса*/
+    color:#666666;
+}
+
+.checkmark:after {/* Прячем галочку для не отмеченных чекбоксов, применив псевдоэлемент after */
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {/* Делаем видимой галочку, только для отмеченных чекбоксов */
+	display: block;
+}
+
+/* ///////// ЧЕКБОКСЫ ЧЕКБОКСЫ  ЧЕКБОКСЫ  ЧЕКБОКСЫ  ЧЕКБОКСЫ */
+
+
+/* ##################################################################### */
+
+.aticl_right{/* ПРАВАЯ КОЛОНКА */
+	display:flex; /* Делаем элемент флекс контейнером */
+	flex-flow:row wrap; /* сверху вниз слева направо */
+	align-content:space-between; /* первый ряд блоков располагается в начале flex-контейнера, последний ряд блоков блок – в конце, все остальные ряды равномерно распределены в оставшемся пространстве */
+	justify-content:center;
+	width:1100px;
+	position:absolute;
+	top:90px;
+	right:-40px;
+}
+
+.tovar{
+	width:330px;
+	height:400px;
+	background:#fff;
+	box-shadow: 0px 15px 27px -16px rgba(105,98,105,1);
+	padding:20px;
+	margin:15px;
+}
+
+.tovar img{
+	margin-right:30px;
+}
+
+.tovar p.flok{
+	color:#666666;
+	font-size:20px;
+	text-align:left;
+	font-weight:bold;
+}
+
+.tovar p.desin{
+	color:#666666;
+	font-size:18px;
+	text-align:left;
+	font-weight:bold;
+}
+
+.tovar p{
+	color:#999999;
+	font-size:18px;
+	text-align:left;
+}
